@@ -22,11 +22,32 @@
 
     <p>date: {{ date('d.m.Y') }}</p>
 
-    @foreach($arr as $elem)
+    @foreach ($arr as $elem)
         <p>{{ $loop->count }}</p>
         <p>{{ $elem }}</p>
     @endforeach
 
+    @forelse ($city as $elem)
+    <p>{{ $elem }}</p>
+    @empty
+    <p>Москва</p>
+    @endforelse
+
+    @foreach ($location as $elem)
+        <p>{{ $elem }}</p>
+    @forelse ($city as $elem)
+        <p>{{ $elem }}</p>
+    @empty
+        <p>Москва</p>
+    @endforelse
+    @forelse ($country as $elem)
+        <p>{{ $elem }}</p>
+    @empty
+        <p>Россия</p>
+    @endforelse  
+    @endforeach
+
+    
 </body>
 
 </html>

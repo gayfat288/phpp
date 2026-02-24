@@ -9,4 +9,4 @@ Route::get('/', function () {
 use app\Http\Controllers\UserController;
 use App\Http\Controllers\BladeController;
 
-Route::get('/post', [BladeeController::class, 'show']);
+Route::get('/post', [BladeController::class, 'show']);
