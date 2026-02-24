@@ -1,0 +1,12 @@
+<?php
+
+namespace app\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class BladeController extends Controller
+{
+    public function show() {
+        return view('post.show', ['name'=>'ivan', 'age'=>'27', 'salary'=>'600', 'class'=>'class', 'name1'=>'evgeni', 'age1'=>'38', 'salary1'=>'1000', 'style'=>'color:red', 'text'=>'text', 'href'=>'ok.ru', 'arr'=>['name'=>'artom', 'age'=>34, 'salary'=>852], 'city'=>'Омск']);
+    }
+}
