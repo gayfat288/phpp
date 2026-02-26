@@ -78,6 +78,20 @@
     @unless ($userAge >= 18)
     <p>Пользователь несовершеннолетний</p>
     @endunless
+
+    {{ $sum = 0 }}
+    @foreach ($numbers as $elem)
+    <ul>
+        <li>{{ $elem * $elem}}</li>
+        <li>{{ sqrt($elem) }}</li>
+    </ul>
+    @if ($loop->count > 0)
+    {{ $sum += $elem }}
+    @else
+    <p>Массив пустой</p>
+    @endif
+    @endforeach
+    <p>{{ $sum }}</p>
 </body>
 
 </html>
