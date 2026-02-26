@@ -47,7 +47,23 @@
     @endforelse  
     @endforeach
 
-    
+    @forelse ($year as $elem)
+    <p>Year: {{ $elem }}</p>
+    @empty
+    <p>Year: {{ date('Y') }}</p>
+    @endforelse
+
+    @forelse ($month as $elem)
+    <p>Month: {{ $elem }}</p>
+    @empty
+    <p>Month: {{ date('m') }}</p>
+    @endforelse
+
+    @forelse ($day as $elem)
+    <p>Day: {{ $elem }}</p>
+    @empty
+    <p>Day: {{ date('d') }}</p>
+    @endforelse
 </body>
 
 </html>
