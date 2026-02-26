@@ -47,27 +47,37 @@
     @endforelse  
     @endforeach
 
-    @forelse ($year as $elem)
-    <p>Year: {{ $elem }}</p>
-    @empty
+    @if ($year > 0)
+    <p>Year: {{ $year }}</p>
+    @else
     <p>Year: {{ date('Y') }}</p>
-    @endforelse
+    @endif
 
-    @forelse ($month as $elem)
-    <p>Month: {{ $elem }}</p>
-    @empty
+    @if($month > 0)
+    <p>Month: {{ $month }}</p>
+    @else
     <p>Month: {{ date('m') }}</p>
-    @endforelse
+    @endif
 
-    @forelse ($day as $elem)
+    @if ($day > 0)
     <p>Day: {{ $elem }}</p>
-    @empty
+    @else
     <p>Day: {{ date('d') }}</p>
-    @endforelse
+    @endif
 
     <p>{!! $str !!}</p> {{-- комментарий --}}
 
-
+    @if ($userAge > 18)
+    <p>Текст для пользователя старше 18 лет. Пользователь совершеннолетний</p>
+    @elseif ($userAge == 18)
+    <p>Текст для 18-летнего пользователя. Пользователь совершеннолетний</p>
+    @else
+    <p>Текст для пользователя младше 18. Пользователь несовершеннолетний</p>
+    @endif
+    
+    @unless ($userAge >= 18)
+    <p>Пользователь несовершеннолетний</p>
+    @endunless
 </body>
 
 </html>
