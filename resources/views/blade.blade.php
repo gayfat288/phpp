@@ -64,6 +64,10 @@
     @empty
     <p>Day: {{ date('d') }}</p>
     @endforelse
+
+    <p>{!! $str !!}</p>
+
+    
 </body>
 
 </html>
