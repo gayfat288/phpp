@@ -65,9 +65,9 @@
     <p>Day: {{ date('d') }}</p>
     @endforelse
 
-    <p>{!! $str !!}</p>
+    <p>{!! $str !!}</p> {{-- комментарий --}}
 
-    
+
 </body>
 
 </html>
