@@ -99,8 +99,9 @@
     <p>{{ $sum }}</p>
 
     <ul>
-    @foreach ($strokes as $str)
-    <li>{{ $str['first'] }}</li>
+    @foreach ($strokes as $key=>$value)
+    <li>{{ $key + 1}}:{{ $value }}</li>
+    @endforeach
 </body>
 
 </html>
