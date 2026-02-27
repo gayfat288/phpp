@@ -120,6 +120,24 @@
     <p>{{ $data }}</p>
     @endif
 </ul>
-</body>
 
+    <table border="1">        
+            @foreach ($array as $row)
+        <tr>
+            @foreach ($row as $cell)
+            <td>
+                {{ $cell }}
+            </td>
+            @endforeach
+        </tr>
+        @endforeach
+    </table>
+
+    <ul>
+	@foreach ($employees as $arr)
+		<li>{{ $arr['name'] }} {{ $arr['surname'] }}  {{ $arr['salary'] }}</li>
+	@endforeach
+    </ul>
+
+</body>
 </html>
