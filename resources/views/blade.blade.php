@@ -110,6 +110,15 @@
         <li>{{ $key }}:{{ $value }}</li>
         @endif
     @endforeach
+
+    @if (is_array($data))
+    <ul>
+        @foreach ($data as $arr)
+        <li>{{ $arr }}</li>
+    </ul>
+    @else
+    <p>{{ $data }}</p>
+    @endif
 </ul>
 </body>
 
