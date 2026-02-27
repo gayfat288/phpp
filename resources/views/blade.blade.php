@@ -102,6 +102,15 @@
     @foreach ($strokes as $key=>$value)
     <li>{{ $key + 1}}:{{ $value }}</li>
     @endforeach
+    </ul>
+
+    <ul>
+    @foreach ($numbers as $key=>$value)
+        @if ($value % 2 == 0)
+        <li>{{ $key }}:{{ $value }}</li>
+        @endif
+    @endforeach
+</ul>
 </body>
 
 </html>
