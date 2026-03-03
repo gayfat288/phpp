@@ -82,7 +82,17 @@ class BladeController extends Controller
                 ],
 
                 'first'=>'firstIteration',
-                'last'=>'lastIteration'
+                'last'=>'lastIteration',
+
+                'numsArray'=> [
+                    1,
+                    2,
+                    8,
+                    14,
+                    7,
+                    12,
+                    18
+                ]
             ]
         );
     }

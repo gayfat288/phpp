@@ -110,16 +110,17 @@
         <li>{{ $key }}:{{ $value }}</li>
         @endif
     @endforeach
+    </ul>
 
     @if (is_array($data))
     <ul>
         @foreach ($data as $arr)
         <li>{{ $arr }}</li>
+        @endforeach
     </ul>
     @else
     <p>{{ $data }}</p>
     @endif
-</ul>
 
     <table border="1">        
             @foreach ($array as $row)
@@ -156,5 +157,27 @@
             @endif
         @endforeach
     </ul>
+
+    @foreach ($numsArray as $nums)
+        <p><b>{{ $nums }}</b></p>
+    @endforeach
+
+    @foreach ($numsArray as $arr)
+        @if($arr == 0)
+            @break
+        @endif
+        <p>{{ $arr }}</p>
+    @endforeach
+
+    @foreach ($numsArray as $arr)
+        @if($arr == 0)
+            @continue
+        @endif
+        <p>{{ $arr }}</p>
+    @endforeach
+
+    @for ($i = 1, $i > 11, $i++)
+        <p>{{ $i }}</p>
+    @endfor
 </body>
 </html>
