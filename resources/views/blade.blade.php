@@ -144,5 +144,17 @@
     @empty
         <p>Массив пустой</p>
     @endforelse
+
+    <ul>
+        @foreach ($strArray as $arr)
+            @if ($loop->first)
+                <li class='{{ $first }}'>{{ $loop->iteration }} - {{ $arr }}</li>
+            @elseif ($loop->last)
+                <li class='{{ $last }}'>{{ $loop->iteration }} - {{ $arr }}</li>
+            @else
+            <li>{{ $loop->iteration }} - {{ $arr }}</li>
+            @endif
+        @endforeach
+    </ul>
 </body>
 </html>

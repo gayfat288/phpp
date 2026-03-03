@@ -72,7 +72,17 @@ class BladeController extends Controller
                     'first',
                     'second',
                     'third'
-                ]
+                ],
+
+                'strArray' => [
+                    'stroke1',
+                    'stroke2',
+                    'stroke3',
+                    'stroke4'
+                ],
+
+                'first'=>'firstIteration',
+                'last'=>'lastIteration'
             ]
         );
     }
