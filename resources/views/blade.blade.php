@@ -139,5 +139,10 @@
 	@endforeach
     </ul>
 
+    @forelse($users as $user)
+        <p>{{ $user }}</p>
+    @empty
+        <p>Массив пустой</p>
+    @endforelse
 </body>
 </html>

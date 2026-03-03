@@ -66,6 +66,12 @@ class BladeController extends Controller
                         'surname' => 'surname3',
                         'salary' => 3000,
                     ],
+                ],
+
+                'users' => [
+                    'first',
+                    'second',
+                    'third'
                 ]
             ]
         );
