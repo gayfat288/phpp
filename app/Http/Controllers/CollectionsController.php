@@ -18,8 +18,14 @@ class CollectionsController extends Controller
             });
         });
 
-        //Метод all
-        $all = collect([1, 2, 3])->all();
-        dd($all);
+        $average = collect([
+            ['foo' => 10],
+            ['foo' => 10],
+            ['foo' => 20],
+            ['foo' => 40]
+        ])->avg('foo');
+
+        $average = collect([1, 1, 2, 4])->avg();
+        dd($average);
     }
 }
