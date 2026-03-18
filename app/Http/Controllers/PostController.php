@@ -9,6 +9,6 @@ class PostController extends Controller
 {
     public function show()
     {
-        DB::table('posts')->where('id', '!=', 3)->dd();
+        DB::table('posts')->where('id', '!=', 3)->dump();
     }
 }
