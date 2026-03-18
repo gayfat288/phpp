@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->InRandomOrder()->first();
+        $users = DB::table('users')->where('age', '>', 20)->where('age', '<', 30)->InRandomOrder()->get();
         dump($users);
         return view('users', ['users' => $user]);
     }
