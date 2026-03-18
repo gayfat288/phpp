@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    $users = DB::table('users')->get();
-    return view('users.show', ['users'=>$users]);
+    public function show()
+    {
+        DB::enableQueryLog();
+        DB::table('posts')->where('id', '!=', 3)->get();
+        dump(Db::getQueryLog());
+    }
 }
