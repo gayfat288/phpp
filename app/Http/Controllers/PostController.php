@@ -9,6 +9,6 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->select('name', 'email')->get();
+        $users = DB::table('users')->select('email as user_email' )->get();
     }
 }
