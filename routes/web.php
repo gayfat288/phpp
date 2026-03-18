@@ -8,5 +8,6 @@ Route::get('/', function () {
 
 use app\Http\Controllers\UserController;
 use App\Http\Controllers\BladeController;
+use App\Http\Controllers\PostController;
 
 Route::get('/post', [BladeController::class, 'show']);
