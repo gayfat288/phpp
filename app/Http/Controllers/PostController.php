@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->pluck('name');
-        return view('users', ['users' => $names]);
+        $users = DB::table('users')->whereBetween('age', [30, 40]);
+        return view('users', ['users' => $age]);
     }
 }
