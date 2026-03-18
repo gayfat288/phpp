@@ -9,6 +9,6 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->where('salary', '=', 500)->orWhere('age', '>', 20)->where('age', '<', 30)->get();
+        $users = DB::table('users')->where('age', '>', 20)->where('age', '<', 30)->orWhere('salary', '>', 400)->where('salary', '>', 800)->get();
     }
 }
