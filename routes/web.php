@@ -11,3 +11,4 @@ use App\Http\Controllers\BladeController;
 use App\Http\Controllers\PostController;
 
 Route::get('/post', [BladeController::class, 'show']);
+Route::get('/user', [PostController::class, 'show']);

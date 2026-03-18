@@ -8,7 +8,5 @@ use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     $users = DB::table('users')->get();
-    foreach ($users as $user) {
-        dump($user);
-    }
+    return view('users.show', ['users'=>$users]);
 }
