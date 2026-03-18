@@ -8,5 +8,7 @@ use Illuminate\Support\Facades\DB;
 class PostController extends Controller
 {
     $users = DB::table('users')->get();
-    dump($users);
+    foreach ($users as $user) {
+        dump($user);
+    }
 }
