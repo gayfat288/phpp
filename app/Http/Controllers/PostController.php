@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->where('age' '>', 30)->orderBy('created_at', 'asc')->get();
+        $users = DB::table('users')->orderBy('updated_at', 'desc')->get();
         return view('users', ['users' => $user]);
     }
 }
