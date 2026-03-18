@@ -1,3 +1,7 @@
 <x-layout>
-    <p>{{ $email }}</p>
+    <ul>
+        @foreach ($names as $name)
+        <li>{{ $name }}</li>
+        @endforeach
+    </ul>
 </x-layout>
