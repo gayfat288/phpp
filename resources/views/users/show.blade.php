@@ -1,5 +1,3 @@
 <x-layout>
-    <p>{{ $user->name }}</p>
-    <p>{{ $user->age }}</p>
-    <p>{{ $user->email }}</p>
+    <p>{{ $email }}</p>
 </x-layout>
