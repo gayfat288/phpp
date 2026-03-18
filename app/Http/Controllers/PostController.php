@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = DB::table('users')->skip(4)->take(10)->get();
+        $users = DB::table('users')->skip(2)->take(10)->where('age', '=', 30)->get();
         dump($users);
         return view('users', ['users' => $user]);
     }
