@@ -1,7 +1,3 @@
 <x-layout>
-    <ul>
-        @foreach ($names as $name)
-        <li>{{ $name }}</li>
-        @endforeach
-    </ul>
+    <p>{{ $user->id }}</p>
 </x-layout>
