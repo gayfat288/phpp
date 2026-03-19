@@ -7,10 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function show()
+    public function getAll()
     {
-        $users = DB::table('users')->delete();
-        dump($users);
-        return view('users', ['users' => $user]);
+        $posts = Post::all();
+        return view('post', ['posts'=>$posts]);
     }
 }
