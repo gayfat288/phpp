@@ -12,4 +12,10 @@ class PostController extends Controller
         $posts = Post::all();
         return view('post', ['posts'=>$posts]);
     }
+
+    public function getOne($id)
+    {
+        $postId = app\Models\Post::findOrFail($id);
+        return view('postId', ['postId'=>$post]);
+    }
 }

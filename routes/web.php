@@ -12,3 +12,4 @@ use App\Http\Controllers\PostController;
 
 Route::get('/blade', [BladeController::class, 'show']);
 Route::get('/post/all', [PostController::class, 'getAll']);
+Route::get('/post/{id}', [PostController::class, 'getOne']);
