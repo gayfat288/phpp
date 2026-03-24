@@ -19,12 +19,14 @@ class PostController extends Controller
         return view('postId', ['postId'=>$post]);
     }
 
-    public function newPost()
+    public function newPost(Request $request)
     {
         $postt = new Post;
 
         $postt->name = $request->name;
 
         $postt->save();
+
+        return view('postt', ['postt'=>$edit]);
     }
 }
