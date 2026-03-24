@@ -25,6 +25,6 @@ class PostController extends Controller
 
         $postt->name = $request->name;
 
-        $flight->save();
+        $postt->save();
     }
 }
