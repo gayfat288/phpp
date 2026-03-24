@@ -7,15 +7,15 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
-    public function getAll()
+    public function getAll($order == 'date', $dir == 'desc')
     {
-        $posts = Post::orderBy('date', 'desc')->all();
+        $posts = Post::orderBy($order, $dir)->all();
         return view('post', ['posts'=>$posts]);
     }
 
     public function getOne($id)
     {
-        $postId = app\Models\Post::findOrFail($id);
+        $postId = Post::findOrFail($id);
         return view('postId', ['postId'=>$post]);
     }
 }
