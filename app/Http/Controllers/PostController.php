@@ -18,4 +18,13 @@ class PostController extends Controller
         $postId = Post::findOrFail($id);
         return view('postId', ['postId'=>$post]);
     }
+
+    public function newPost()
+    {
+        $postt = new Post;
+
+        $postt->name = $request->name;
+
+        $flight->save();
+    }
 }
