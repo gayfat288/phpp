@@ -46,9 +46,16 @@ class PostController extends Controller
         $post->save();
     }
 
-    public function firstOr() {
-        $post = App\Post::firstOrCreate(['name'=>'namee']);
+    public function delPost(Request $requestt, $id)
+    {
+        $delPost = Post::find($id);
 
-        $post = App\Post::firstOrNew(['name'=>'namee']);
+        if($requestt->has('submit')) {
+            $delPost->delete();
+
+            return redirect()->to('post/all')->with('del', 'title'=>$request->title)->with('success', 'Статья удалена');
+        }
+
+        return view('delPost', ['delPost' => $delete]);
     }
 }
