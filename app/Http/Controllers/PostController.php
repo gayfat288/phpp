@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Post;
 
 class PostController extends Controller
 {
@@ -19,15 +20,21 @@ class PostController extends Controller
         return view('postId', ['postId'=>$post]);
     }
 
-    public function newPost(Request $request)
+    public function newPost(Request $request, $id)
     {
-        $postt = new Post;
+        $postt = Post::find($id);
 
-        $postt->name = $request->name;
+        if ($request->has('submit')) {
+            $postt->title = $request->title;
+            $postt->desc = $request->desc;
+            $postt->date = $request->date;
+            $postt->text = $request->text;
 
-        $postt->save();
+            $post->save();
 
-        return view('postt', ['postt'=>$edit]);
+            return redirect()->to('post/all')->with('upd', 'id'=>$request->id, 'title'=>$request->title);
+        }
+        return view('test.newPost', ['postt' => $postt]);
     }
 
     public function updatedPost()
