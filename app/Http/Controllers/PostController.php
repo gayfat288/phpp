@@ -29,4 +29,13 @@ class PostController extends Controller
 
         return view('postt', ['postt'=>$edit]);
     }
+
+    public function updatedPost()
+    {
+        $post = Post::find(1);
+        $post->title = 'new title';
+        $post->desc = 'new description';
+
+        $post->save();
+    }
 }

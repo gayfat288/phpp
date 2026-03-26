@@ -14,3 +14,4 @@ Route::get('/blade', [BladeController::class, 'show']);
 Route::get('/post/all/{order?}/{dir?}', [PostController::class, 'getAll'])->where($order, '=', 'id|date|title')->where($dir, '=', 'asc|desc');
 Route::get('/post/{id}', [PostController::class, 'getOne'])->where($id, '=', '[0-9]+');
 Route::get('/post/new', [PostController::class, 'newPost']);
+Route::get('/post/upd', [PostController::class, 'updatedPost']);
