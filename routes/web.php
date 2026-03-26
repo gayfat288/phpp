@@ -16,3 +16,4 @@ Route::get('/post/{id}', [PostController::class, 'getOne'])->where($id, '=', '[0
 Route::match(['get', 'post'], '/post/new/{id}', 'PostController@newPost');
 Route::get('/post/upd', [PostController::class, 'updatedPost']);
 Route::get('/post/del/{id}', [PostController::class, 'delPost']);
+Route::get('/post/deleted', [PostController::class, 'getDeletedPost']);

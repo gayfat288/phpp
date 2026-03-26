@@ -8,7 +8,17 @@ use App\Post;
 
 class PostController extends Controller
 {
-    public function getAll($order == 'date', $dir == 'desc')
+    use SoftDeletes;
+
+    protected $dates = ['deleted_at'];
+
+    public function soft() {
+        Schema::table('posts', function ($table) {
+        $table->softdeletes();
+        });
+    }   
+
+    public function getAll($order = 'date', $dir ='desc')
     {
         $posts = Post::orderBy($order, $dir)->all();
         return view('post', ['posts'=>$posts]);
@@ -57,5 +67,16 @@ class PostController extends Controller
         }
 
         return view('delPost', ['delPost' => $delete]);
+    }
+
+    public function getDeletedPost()
+    {
+        if($post->trashed()) {
+            return view('post', ['post' => $deleted]);
+        }
+    }
+
+    public function restorePost() {
+
     }
 }
