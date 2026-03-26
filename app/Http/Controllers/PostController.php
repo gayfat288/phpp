@@ -45,4 +45,9 @@ class PostController extends Controller
 
         $post->save();
     }
+
+    public function updates()
+    {
+        App\Post::where('text', 'text1')->update(['desc' => '11111']);
+    }
 }
