@@ -46,8 +46,9 @@ class PostController extends Controller
         $post->save();
     }
 
-    public function updates()
-    {
-        App\Post::where('text', 'text1')->update(['desc' => '11111']);
+    public function firstOr() {
+        $post = App\Post::firstOrCreate(['name'=>'namee']);
+
+        $post = App\Post::firstOrNew(['name'=>'namee']);
     }
 }
