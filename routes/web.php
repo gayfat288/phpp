@@ -12,4 +12,4 @@ use App\Http\Controllers\PostController;
 
 Route::get('/blade', [BladeController::class, 'show']);
 Route::get('/profiles', [PostController::class, 'show']);
-Route::get('/cities', [PostController:class, 'userCity']);
+Route::get('/cities', [PostController::class, 'userCity']);

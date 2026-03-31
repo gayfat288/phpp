@@ -19,4 +19,10 @@ class PostController extends Controller
         $user = Cities::all()->user;
         return view('user', ['user' = $users]);
     }
+
+    public function cityCountries()
+    {
+        $city = Cities::all()->countries;
+        return view('city', ['city'=>$cities]);
+    }
 }

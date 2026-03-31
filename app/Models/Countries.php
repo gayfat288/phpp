@@ -4,14 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cities extends Model
+class Countries extends Model
 {
     protected $table = 'posts';
 
     public $timestamps = false;
-
-    public function countries()
-    {
-        return $this->belongsTo('App\Countries');
-    }
 }
