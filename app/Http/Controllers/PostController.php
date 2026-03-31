@@ -10,12 +10,13 @@ class PostController extends Controller
 {
     public function show()
     {
-        $allUsers = Users::all();
+        $allUsers = Users::all()->profile;
         return view('allUsers', ['allUsers' = $users]);
     }
 
     public function userCity()
     {
-        $user = Cities::find(1)->user;
+        $user = Cities::all()->user;
+        return view('user', ['user' = $users]);
     }
 }
