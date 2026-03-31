@@ -12,6 +12,6 @@ class Ussers extends Model
 
     public function city()
     {
-        return $this->belongsTo('App\Cities', 'foreign_key');
+        return $this->hasManyThrough('App/Cities', 'App/Countries');
     }
 }
