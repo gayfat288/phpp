@@ -11,4 +11,4 @@ use App\Http\Controllers\BladeController;
 use App\Http\Controllers\PostController;
 
 Route::get('/blade', [BladeController::class, 'show']);
-Route::get('/profiles', [PostController::class, 'usersProfiles']);
+Route::get('/profiles', [PostController::class, 'show']);

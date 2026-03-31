@@ -8,7 +8,7 @@ use App\Post;
 
 class PostController extends Controller
 {
-    public function usersProfiles()
+    public function show()
     {
         $allUsers = Users::all();
         return view('allUsers', ['allUsers' = $users]);
