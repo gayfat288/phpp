@@ -12,7 +12,10 @@ class PostController extends Controller
     {
         $allUsers = Users::all();
         return view('allUsers', ['allUsers' = $users]);
+    }
 
+    public function userCity()
+    {
         $user = Cities::find(1)->user;
     }
 }
