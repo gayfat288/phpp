@@ -22,7 +22,7 @@ class PostController extends Controller
 
     public function cityCountries()
     {
-        $city = Cities::all()->countries;
-        return view('city', ['city'=>$cities]);
+        $users = Ussers::all()->city->countries;
+        return view('users', ['users'=>$userInfo]);
     }
 }
