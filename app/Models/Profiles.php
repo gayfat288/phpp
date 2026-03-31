@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Profiles extends Model
 {
-    //
+    protected $table = 'posts';
+
+    public $timestamps = false;
 }

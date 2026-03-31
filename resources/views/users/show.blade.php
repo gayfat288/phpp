@@ -1,3 +1,9 @@
 <x-layout>
-    <p>{{ $user->id }}</p>
+    <table border="1">
+        @foreach ($users as $us)
+        <tr>
+            <td>{{ $us }}</td>
+        </tr>
+        @endforeach
+    </table>
 </x-layout>

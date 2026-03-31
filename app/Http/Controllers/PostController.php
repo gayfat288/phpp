@@ -10,6 +10,7 @@ class PostController extends Controller
 {
     public function usersProfiles()
     {
-        $profile = Users::find(1)->profile;
+        $allUsers = Users::all();
+        return view('allUsers', ['allUsers' = $users]);
     }
 }
