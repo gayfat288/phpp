@@ -9,4 +9,9 @@ class Countries extends Model
     protected $table = 'posts';
 
     public $timestamps = false;
+
+    public function cities()
+    {
+        return $this->hasMany('App/Cities');
+    }
 }
