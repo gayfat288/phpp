@@ -11,6 +11,7 @@ class PostController extends Controller
     public function show()
     {
         $user = App\User::find(1);
-        $user->roles()->attach($roleId);
+
+        $user->roles()->syncwithoutDetaching([1, 2, 3]);
     }
 }
