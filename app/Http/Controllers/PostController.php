@@ -10,8 +10,10 @@ class PostController extends Controller
 {
     public function show()
     {
-        $category = new App\Category(['name'=>'name1']);
-        $product = App\Products::find(1);
-        $product->comments()->save($category);
+        $post = App\Post::find(1);
+
+        $comment = $post->comments()->create([
+            'message' => 'A new comment',
+        ]);
     }
 }
