@@ -11,7 +11,7 @@ class PostController extends Controller
     public function show()
     {
         $user = App\User::find(1);
-
-        $user->roles()->syncwithoutDetaching([1, 2, 3]);
+        $user->roles()->toggle([1, 2, 3]);
+        $user->roles()->updateExistingPivot($roleId, $attributes);
     }
 }
