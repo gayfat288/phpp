@@ -10,8 +10,8 @@ class PostController extends Controller
 {
     public function show()
     {
-        $user = App\User::find(1);
-        $user->roles()->toggle([1, 2, 3]);
-        $user->roles()->updateExistingPivot($roleId, $attributes);
+        $comment = App\Comment::find(1);
+        $comment->text = 'Edit to this comment!';
+        $comment->save();
     }
 }
