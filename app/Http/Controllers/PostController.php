@@ -10,10 +10,7 @@ class PostController extends Controller
 {
     public function show()
     {
-        $post = App\Post::find(1);
-
-        $comment = $post->comments()->create([
-            'message' => 'A new comment',
-        ]);
+        $user = App\User::find(1);
+        $user->roles()->attach($roleId);
     }
 }
