@@ -10,6 +10,6 @@ class PostController extends Controller
 {
     public function show()
     {
-        $users = Ussers::all()->city;
+        $productCategory = Product::all()->categories;
     }
 }
