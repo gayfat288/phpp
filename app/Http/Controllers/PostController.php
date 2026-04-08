@@ -10,6 +10,6 @@ class PostController extends Controller
 {
     public function show()
     {
-        
+        //создать миграцию! в файле есть!!!(в папке с контроллерами)
     }
 }
