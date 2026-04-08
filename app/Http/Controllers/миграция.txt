@@ -1,0 +1,15 @@
+php artisan make:migration create_messages_table
+
+в миграции:
+
+public function up()
+{
+    Schema::create('messages', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->text('text');
+        $table->timestamps();
+    });
+}
+
+php artisan migrate
