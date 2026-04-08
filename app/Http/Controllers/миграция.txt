@@ -25,4 +25,25 @@ Schema::create('ads', function (Blueprint $table) {
     $table->timestamps();
 });
 
+php artisan make:migration create_countries_table
+Schema::create('countries', function (Blueprint $t) {
+    $t->id();
+    $t->string('name');
+});
+
+php artisan make:migration create_cities_table
+Schema::create('cities', function (Blueprint $t) {
+    $t->id();
+    $t->string('name');
+    $t->foreignId('country_id');
+});
+
+php artisan make:migration create_places_table
+Schema::create('places', function (Blueprint $t) {
+    $t->id();
+    $t->string('name');
+    $t->text('description');
+    $t->foreignId('city_id');
+});
+
 php artisan migrate
