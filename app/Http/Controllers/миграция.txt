@@ -13,3 +13,16 @@ public function up()
 }
 
 php artisan migrate
+
+
+
+php artisan make:migration create_adss_table
+
+Schema::create('ads', function (Blueprint $table) {
+    $table->id();
+    $table->string('category');
+    $table->text('text');
+    $table->timestamps();
+});
+
+php artisan migrate
