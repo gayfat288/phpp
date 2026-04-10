@@ -6,10 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use app\Http\Controllers\UserController;
-use App\Http\Controllers\BladeController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\FormController;
 
-Route::get('/blade', [BladeController::class, 'show']);
-Route::get('/profiles', [PostController::class, 'show']);
-Route::get('/cities', [PostController::class, 'userCity']);
+Route::get('/form', [FormController::class, 'form']);

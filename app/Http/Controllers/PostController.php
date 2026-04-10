@@ -10,9 +10,6 @@ class PostController extends Controller
 {
     public function show()
     {
-        $comment = App\Comment::find(1);
-        $comment->text = 'Edit to this comment!';
-        $comment->save();
-        //остальыне коммиты в лаб 14 блин
+        //создать миграции! в файле есть!!!(в папке с контроллерами)
     }
 }
