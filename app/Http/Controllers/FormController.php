@@ -9,10 +9,11 @@ class FormController extends Controller
 {
     public function form(Request $request)
     {
-        if ($request->has('number')) {
-            $num = $request->input('number');
-            echo ('Квадрат введенного числа: ');
-            var_dump($num * $num);
+        if ($request->has('number1', 'number2')) {
+            $num1 = $request->input('number1');
+            $num2 = $request->input('number2');
+            echo ('Сумма чисел: ');
+            var_dump($num1 + $num2);
         }
         return view('form.show');
     }
