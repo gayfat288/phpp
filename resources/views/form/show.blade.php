@@ -1,4 +1,4 @@
-<form action="/form/result" method="POST">
+<form action="/form/" method="POST">
     {{ csrf_field() }}
     <input type="text" name="text">
     <input type="submit">
