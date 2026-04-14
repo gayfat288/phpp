@@ -14,8 +14,8 @@ class FormController extends Controller
 
     public function result(Request $request)
     {
-        $num = [$request->input('number1'), $request->input('number2'), $request->input('number2')];
-        var_dump($num);
+        $res = $request->input('text');
+        echo($res);
         return view('form.result');
     }
 }

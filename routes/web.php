@@ -9,4 +9,4 @@ Route::get('/', function () {
 use App\Http\Controllers\FormController;
 
 Route::get('/form', [FormController::class, 'form']);
-Route::get('/form/result', [FormController::class, 'result']);
+Route::post('/form/result', [FormController::class, 'result']);

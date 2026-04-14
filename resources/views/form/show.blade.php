@@ -1,6 +1,5 @@
-<form action="/form/result">
-    <input type="number" name="number1">
-    <input type="number" name="number2">
-    <input type="number" name="number3">
+<form action="/form/result" method="POST">
+    {{ csrf_field() }}
+    <input type="text" name="text">
     <input type="submit">
 </form>
