@@ -14,8 +14,13 @@ class FormController extends Controller
 
     public function result(Request $request)
     {
-        $method = $request->method();
-        echo($method);
+        if($request->isMethod('post')) {
+            echo('!!');
+        }
+
+        elseif($request->isMethod('get')){
+            echo('!');
+        }
         return view('form.result');
     }
 }
