@@ -14,8 +14,8 @@ class FormController extends Controller
 
     public function result(Request $request)
     {
-        $res = $request->input('text');
-        echo($res);
+        $method = $request->method();
+        echo($method);
         return view('form.result');
     }
 }
