@@ -7,15 +7,14 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
-    public function form(Request $request)
+    public function form()
     {
-        if($request->isMethod('get')) {
-            return view('form.show');
-        }
+        return view('form.show');
+    }
 
-        if(request->isMethod('post')) {
-            $text = $request->input('text');
-            return view('form.result', ['text', $text]);
-        }
+    public function result(Request $request)
+    {
+        $data = $request->all();
+        return view('form.result', ['data' => $data]);
     }
 }

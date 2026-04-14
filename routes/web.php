@@ -8,4 +8,5 @@ Route::get('/', function () {
 
 use App\Http\Controllers\FormController;
 
-Route::match(['get', 'post'], '/form', [FormController::class, 'form']);
+Route::get('/form', [FormController::class, 'form']);
+Route::get('/from/result', [FormController::class, 'result']);
