@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
-    public function form(Request $request)
+    public function form()
     {
-        if ($request->has('number1', 'number2')) {
-            $num1 = $request->input('number1');
-            $num2 = $request->input('number2');
-            echo ('Сумма чисел: ');
-            var_dump($num1 + $num2);
-        }
         return view('form.show');
+    }
+
+    public function result(Request $request)
+    {
+        $num = [$request->input('number1'), $request->input('number2'), $request->input('number2')];
+        var_dump($num);
+        return view('form.result');
     }
 }
