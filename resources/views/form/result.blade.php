@@ -1,5 +1,1 @@
-<ul>
-    @foreach($data as $d)
-    <li>{{ $d }}</li>
-    @endforeach
-</ul>
+<p>hi, {{ $name }}</p>

@@ -12,9 +12,9 @@ class FormController extends Controller
         return view('form.show');
     }
 
-    public function result(Request $request)
+    public function result(Request $request, $name)
     {
-        $data = $request->only('name', 'surname');
-        return view('form.result', ['data' => $data]);
+        $name = $request->input('name');
+        return view('form.result', ['name'=>$name]);
     }
 }
