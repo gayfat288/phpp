@@ -8,4 +8,4 @@ Route::get('/', function () {
 
 use App\Http\Controllers\SessionController;
 
-Route::get('/session/get', [SessionController::class, 'get']);
+Route::get('/session', [SessionController::class, 'show']);
