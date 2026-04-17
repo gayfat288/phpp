@@ -1,4 +1,4 @@
-<form action="/form/result/{name}" method="GET">
+<form action="/form/result" method="GET">
     <input type="text" name="name" placeholder="Имя">
     <input type="text" name="surname" placeholder="Фамилия">
     <input type="email" name="email" placeholder="Почта">

@@ -7,6 +7,9 @@ Route::get('/', function () {
 });
 
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\MethodController;
 
 Route::get('/form', [FormController::class, 'form']);
-Route::get('/form/result/{name}', [FormController::class, 'result']);
+Route::get('/form/result', [FormController::class, 'result']);
+
+Route::get('/test/method', [MethodController::class, 'show']);
