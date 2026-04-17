@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class SessionController extends Controller
 {
     public function show(Request $request) {
-        $count = $request->session()->get('views', 0);
-        $count++;
-        $request->session()->put('views', $count);
-        return view('session.show', ['count'=>$count]);
+        $value = $request->session()->get('counter', 1);
+        echo $value;
+        $request->session()->put('counter', $value + 1);
+        return view('session.show');
     }
 }
