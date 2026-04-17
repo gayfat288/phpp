@@ -7,13 +7,15 @@ use Illuminate\Http\Request;
 class SessionController extends Controller
 {
     public function show(Request $request) {
-        $request->session()->put('a', '1');
-        $request->session()->put('b', '2');
-        $request->session()->put('c', '3');
-        $request->session()->put('d', '4');
+        $request->session()->put('test', 'test');
 
-        $data = $request->session()->all();
-        var_dump($data);
+        if ($request->session()->has('test')) {
+            $val = $request->session()->get('test');
+            echo($val);
+        }
+        else {
+            $request->session()->put('test', 'test');
+        }
         return view('session.show');
     }
 }
