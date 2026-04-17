@@ -14,7 +14,7 @@ class FormController extends Controller
 
     public function result(Request $request)
     {
-        $data = $request->all();
+        $data = $request->except('email', 'pass');
         return view('form.result', ['data' => $data]);
     }
 }

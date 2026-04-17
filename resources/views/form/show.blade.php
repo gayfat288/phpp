@@ -1,7 +1,7 @@
 <form action="/form/result/" method="GET">
-    <input type="text" name="text1">
-    <input type="number" name="num2">
-    <input type="text" name="text3">
-    <input type="text" name="text4">
+    <input type="text" name="name" placeholder="Имя">
+    <input type="text" name="surname" placeholder="Фамилия">
+    <input type="email" name="email" placeholder="Почта">
+    <input type="password" name="pass" placeholder="Пароль">
     <input type="submit">
 </form>
