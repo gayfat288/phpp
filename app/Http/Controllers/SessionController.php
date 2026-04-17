@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 class SessionController extends Controller
 {
     public function show(Request $request) {
-        $value = $request->session()->get('counter', 1);
-        echo $value;
-        $request->session()->put('counter', $value + 1);
+        $current_time = date('H:i:s');
+        $time = $request->session()->get('time', $current_time);
+        echo $time;
+        $request->session()->put('time', $current_time);
         return view('session.show');
     }
 }
