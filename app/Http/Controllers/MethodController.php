@@ -8,10 +8,7 @@ class MethodController extends Controller
 {
     public function show(Request $request)
     {
-        $uri = $request->path();
-        $url = $request->url();
-        $full = $request->fullUrl();
-        $methods = [$uri, $url, $full];
-        return view('method.show', ['methods'=>$methods]);
+        $query = $request->fullUrlWithQuery(['page'=> 1]);
+        return view('method.show', ['query'=>$query]);
     }
 }
