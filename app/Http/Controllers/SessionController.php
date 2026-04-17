@@ -6,10 +6,13 @@ use Illuminate\Http\Request;
 
 class SessionController extends Controller
 {
-    public function show(Request $request) {
-        $request->session()->put('arr', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-        $request->session()->put('arr2', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-        $request->session()->forget('arr');
-        return view ('session.show');
+    public function put(Request $request) {
+        $value = $request->session()->put('key', 1);
+        return view('session.show');
+    }
+
+    public function get(Request $request) {
+        $val = $request->session()->pull('key');
+        return view('session.get', ['val' => $val]);
     }
 }
