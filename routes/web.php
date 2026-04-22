@@ -6,6 +6,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\SessionController;
+use App\Http\Controllers\RedirectController;
 
-Route::get('/session', [SessionController::class, 'show']);
+Route::get('/redirect', [RedirectController::class, 'show']);
+Route::get('/redirect/result', [RedirectController::class, 'result']);
