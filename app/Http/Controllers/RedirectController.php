@@ -16,6 +16,8 @@ class RedirectController extends Controller
             }
 
             else {
+                $warning = 'Введено некорректное число';
+                echo $warning;
                 return view('redirect.show');
             }
         }
@@ -27,6 +29,6 @@ class RedirectController extends Controller
 
     public function result(Request $request)
     {
-        return $request->input('num');
+        return 'форма успешно отправлена';
     }
 }
