@@ -8,15 +8,18 @@ class RedirectController extends Controller
 {
     public function show(Request $request)
     {
-        if ($request->has('num')) {
-            $num = $request->input('num');
+        $request->session()->put('email', 'alesha44@gmail.com');
+        $right_email = $request->session()->get('email');
 
-            if ($num >= 0 and $num <= 10) {
+        if ($request->has('email')) {
+            $email = $request->input('email');
+
+            if ($email == $right_email) {
                 return redirect('redirect/result');
             }
 
             else {
-                $warning = 'Введено некорректное число';
+                $warning = 'Введен некорректный email';
                 echo $warning;
                 return view('redirect.show');
             }
@@ -29,6 +32,11 @@ class RedirectController extends Controller
 
     public function result(Request $request)
     {
-        return 'форма успешно отправлена';
+        $right_email = $request->session()->get('email');
+        echo $right_email;
+        ?>
+        <br><br>
+        <?php
+        return 'email корректный';
     }
 }
