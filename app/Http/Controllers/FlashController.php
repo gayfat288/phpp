@@ -8,13 +8,15 @@ class FlashController extends Controller
 {
     public function show(Request $request)
     {
-        $request->session()->flash('flash', 'Флэш-сообщение');
-        return redirect('flash/result');
+        if ($request->has('num1') and $request->has('num2') and $request->has('num3') and $request->has('num4') and $request->has('num5')) {
+            $request->flash();
+            return redirect('flash/result');
+        }
+        return view('flash.show');
     }
 
     public function result(Request $request)
     {
-        $flash = $request->session()->get('flash');
-        return view('flash.result', ['flash'=>$flash]);
+        return $request->old('num1'). ' '.$request->old('num2').' '.$request->old('num3'). ' '.$request->old('num4').' '.$request->old('num5');
     }
 }
