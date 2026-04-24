@@ -1,4 +1,4 @@
 <form action="">
-    <input type="email" name="email">
+    <input type="text" name="text">
     <input type="submit">
 </form>

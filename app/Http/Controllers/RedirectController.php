@@ -8,35 +8,11 @@ class RedirectController extends Controller
 {
     public function show(Request $request)
     {
-        $request->session()->put('email', 'alesha44@gmail.com');
-        $right_email = $request->session()->get('email');
-
-        if ($request->has('email')) {
-            $email = $request->input('email');
-
-            if ($email == $right_email) {
-                return redirect('redirect/result');
-            }
-
-            else {
-                $warning = 'Введен некорректный email';
-                echo $warning;
-                return view('redirect.show');
-            }
-        }
-        
-        else {
-            return view('redirect.show');
-        }
+        return redirect()->route('goshan');
     }
 
-    public function result(Request $request)
+    public function result()
     {
-        $right_email = $request->session()->get('email');
-        echo $right_email;
-        ?>
-        <br><br>
-        <?php
-        return 'email корректный';
+        return view('redirect.result');
     }
 }
