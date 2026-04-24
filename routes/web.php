@@ -9,4 +9,4 @@ Route::get('/', function () {
 use App\Http\Controllers\RedirectController;
 
 Route::get('/redirect', [RedirectController::class, 'show']);
-Route::get('/redirect/result', [RedirectController::class, 'result'])->name('goshan');
+Route::get('/redirect/result/{par1}/{par2}', [RedirectController::class, 'result'])->name('goshan');
