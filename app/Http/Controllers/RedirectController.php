@@ -12,7 +12,7 @@ class RedirectController extends Controller
             $num = $request->input('num');
 
             if ($num >= 0 and $num <= 10) {
-                return redirect('redirect/result')->withInput();
+                return redirect('redirect/result');
             }
 
             else {
