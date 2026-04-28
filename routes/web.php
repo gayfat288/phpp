@@ -6,6 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\FlashController;
+use App\Http\Controllers\ResponseController;
 
-Route::get('/flash', [FlashController::class, 'show']);
+Route::get('/response', [ResponseController::class, 'show']);
