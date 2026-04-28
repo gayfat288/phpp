@@ -17,6 +17,6 @@ class FlashController extends Controller
 
     public function result(Request $request)
     {
-        return $request->old('num1'). ' '.$request->old('num2').' '.$request->old('num3'). ' '.$request->old('num4').' '.$request->old('num5');
+        return $request->old('num1') + $request->old('num2') + $request->old('num3') + $request->old('num4') + $request->old('num5');
     }
 }
