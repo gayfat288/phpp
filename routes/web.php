@@ -6,6 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\ResponseController;
+use App\Http\Controllers\CookiesController;
 
-Route::get('/response', [ResponseController::class, 'show']);
+Route::get('/cookies', [CookiesController::class, 'show']);
