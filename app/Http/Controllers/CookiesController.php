@@ -8,14 +8,10 @@ class CookiesController extends Controller
 {
     public function show(Request $request)
     {
-        $lastVisit = $request->cookie('last_visit');
-        if($lastVisit) {
-            $seconds = time() - $lastVisit;
-            $resp = 'С прошлого захода на страницу прошло '.$seconds.' секунд';
-        }
-        else {
-            $resp = 'Первый заход на страницу';
-        }
-        return response($resp)->cookie('last_visit', time(), 525600);
+        $counter = $request->cookie('count', 0);
+        $counter++;
+        $res = response('Страница обновлена '.$counter.' раз');
+        $res->withCookie(cookie('count', $counter, 100));
+        return $res;
     }
 }
