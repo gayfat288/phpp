@@ -9,3 +9,4 @@ Route::get('/', function () {
 use App\Http\Controllers\CookiesController;
 
 Route::get('/cookies', [CookiesController::class, 'show']);
+Route::get('/cookies/result', [CookiesController::class, 'result']);
