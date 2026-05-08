@@ -13,9 +13,12 @@ class FormController extends Controller
             return view('form.show');
         }
 
-        if(request->isMethod('post')) {
-            $text = $request->input('text');
-            return view('form.result', ['text', $text]);
+        if($request->isMethod('post')) {
+            $num1 = $request->input('num1');
+            $num2 = $request->input('num2');
+            $sum = $num1 + $num2;
+            echo 'Сумма введенных чисел: '.$sum;
+            return view('form.show');
         }
     }
 }
