@@ -8,25 +8,31 @@ class CookiesController extends Controller
 {
     public function show(Request $request)
     {
-        if(isMethod('get')) {
-            return view('cookies.show');
+        if ($request->has('birthday')) {
+            $input = $request->input('birthday');
+            return redirect('/cookies/result')->WithCookie(cookie('birthday', $input, 525600));
         }
 
-        if(isMethod('post')) {
-            $bd = $request->input('birthday');
-            $cookie = cookie('userbd', $bd);
-            $today = date('m-d');
-            $user_bd = date('m-d', strtotime($cookie));
-            $resp = null;
+        return view('cookies.show');
+    }
 
-            if($today === $userbd) {
-                $resp = response('С днём рождения');
+    public function result(Request $request)
+    {
+        $bd = $request->cookie('birthday');
+        if($bd) {
+            $date = date('m-d', strtotime($bd));
+            $today = date('m-d');
+
+            if($date == $today) {
+                return 'С днем рождения!';
+            }
+            else if ($date > $today) {
+                return 'С наступающим днем рождения!';
             }
             else {
-                $resp = response('у тя не др');
+                return 'С прошедшим днем рождения!';
             }
-
-            return response($resp);
         }
+        return view('cookies.result');
     }
 }
