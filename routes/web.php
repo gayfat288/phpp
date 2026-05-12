@@ -6,6 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\PostController;
 
-Route::match(['get', 'post'], '/form', [FormController::class, 'form']);
+Route::get('/post/all', [PostController::class, 'getAll']);
