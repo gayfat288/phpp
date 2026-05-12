@@ -7,7 +7,7 @@
     @foreach ($posts as $post)
     <tr>
         <td>{{ $post->id }}</td>
-        <td>{{ $post->title }}</td>
+        <td><a href="{{ $post->id }}">{{ $post->title }}</a></td>
         <td>{{ $post->desc }}</td>
     </tr>
     @endforeach
