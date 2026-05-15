@@ -17,7 +17,7 @@ class PostController extends Controller
 
     public function getOne($id)
     {
-        $post = Posts::find($id);
+        $post = Posts::findOrFail($id);
         return view('posts.id', ['post'=>$post]);
     }
 }
