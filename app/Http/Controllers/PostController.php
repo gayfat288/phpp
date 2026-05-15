@@ -46,4 +46,18 @@ class PostController extends Controller
         }
         return view('posts.first');
     }
+    
+    public function editPost(Request $request, $id)
+    {
+        $post = Posts::find($id);
+
+        if($request->has('submit')) {
+            $post->title = $request->title;
+            $post->desc = $request->desc;
+            $post->text = $request->text;
+            $post->save();
+            return redirect('/post/all');
+        }
+        return view('posts.edit', ['post'=>$post]);
+    }
 }
