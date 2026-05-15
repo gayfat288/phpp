@@ -11,3 +11,4 @@ use App\Http\Controllers\PostController;
 Route::get('/post/all/{order?}/{dir?}', [PostController::class, 'getAll']);
 Route::get('post/{id}', [PostController::class, 'getOne'])->where(['id' => '[0-9]+']);
 Route::get('post/new', [PostController::class, 'newPost']);
+Route::get('post/first', [PostController::class, 'editFirst']);

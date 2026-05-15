@@ -1,6 +1,6 @@
+<h1>Изменение первой статьи</h1>
 <form action="">
     <input type="text" name="title" placeholder="Название">
     <input type="text" name="desc" placeholder="Описание">
-    <input type="text" name="text" placeholder="Текст">
     <input type="submit">
 </form>

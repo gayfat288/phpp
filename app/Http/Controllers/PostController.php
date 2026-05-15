@@ -34,4 +34,16 @@ class PostController extends Controller
         }
         return view('posts.new');
     }
+
+    public function editFirst(Request $request)
+    {
+        if($request->has('title') and $request->has('desc')) {
+            $post = Posts::find(1);
+            $post->title = $request->title;
+            $post->desc = $request->desc;
+            $post->save();
+            return redirect('/post/all');
+        }
+        return view('posts.first');
+    }
 }
