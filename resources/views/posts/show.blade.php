@@ -9,6 +9,7 @@
         <td>{{ $post->id }}</td>
         <td><a href="{{ $post->id }}">{{ $post->title }}</a></td>
         <td>{{ $post->desc }}</td>
+        <td> <a href="/post/edit/{{ $post->id }}">Отредактировать статью</a></td>
     </tr>
     @endforeach
 </table>
