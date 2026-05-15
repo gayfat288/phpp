@@ -3,6 +3,7 @@
         <td>Id</td>
         <td>Title</td>
         <td>Description</td>
+        <td>Edit</td>
     </tr>
     @foreach ($posts as $post)
     <tr>

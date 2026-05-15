@@ -56,6 +56,7 @@ class PostController extends Controller
             $post->desc = $request->desc;
             $post->text = $request->text;
             $post->save();
+            $flash = $request->session()->flash('Статья отредактирована.');
             return redirect('/post/all');
         }
         return view('posts.edit', ['post'=>$post]);
